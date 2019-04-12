@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Button.Primary"
+        parent="Widget.AppCompat.Button">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">?attr/buttonNormalColor</item>
+        <item name="colorControlHighlight">
+            ?attr/buttonHighlightColor
+        </item>
+        <item name="android:textColor">?attr/buttonTextColor</item>
+    </style>
+
+    <style name="Theme.App.Lilac"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="primaryButtonTheme">
+            @style/Widget.Button.Primary
+        </item>
+        <item name="colorPrimary">#0000dd</item>
+        <item name="colorPrimaryDark">#0000ff</item>
+        <item name="colorAccent">#000055</item>
+        <item name="primaryTextColor">@color/primaryText</item>
+        <item name="buttonNormalColor">@color/buttonNormal</item>
+        <item name="buttonHighlightColor">@color/buttonHighlight</item>
+        <item name="buttonTextColor">@color/buttonText</item>
+    </style>
+
+    <style name="Theme.App.Mint" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="primaryButtonTheme">
+            @style/Widget.Button.Primary
+        </item>
+        <item name="colorPrimary">#ffff00</item>
+        <item name="colorPrimaryDark">#0000ff</item>
+        <item name="colorAccent">#00ff00</item>
+        <item name="primaryTextColor">@android:color/holo_red_dark</item>
+        <item name="buttonNormalColor">@android:color/background_light</item>
+        <item name="buttonHighlightColor">@android:color/primary_text_dark</item>
+        <item name="buttonTextColor">@android:color/secondary_text_light_nodisable</item>
+    </style>
+
+</resources>

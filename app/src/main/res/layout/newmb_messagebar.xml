@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mbContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:gravity="bottom"
+    android:visibility="gone">
+
+    <LinearLayout
+        style="@style/bgTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/mbMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textColor="@drawable/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

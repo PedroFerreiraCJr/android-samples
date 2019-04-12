@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/custom_toast_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Show Toast" />
+
+    <Button
+        android:id="@+id/custom_toast_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Show Toast 2" />
+
+</LinearLayout>
