@@ -10,4 +10,8 @@
         android:id="@+id/toast_act"
         android:title="Custom Toast" />
 
+    <item
+        android:id="@+id/drag_drop_act"
+        android:title="Drag Drop" />
+
 </menu>

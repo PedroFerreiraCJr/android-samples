@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CustomToastActivity.class));
                 return true;
             }
+            case R.id.drag_drop_act: {
+                startActivity(new Intent(MainActivity.this, DragDropActivity.class));
+                return true;
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }

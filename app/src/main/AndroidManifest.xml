@@ -21,6 +21,8 @@
             android:name=".ThemeActivity" />
         <activity
             android:name=".CustomToastActivity" />
+        <activity
+            android:name=".DragDropActivity" />
     </application>
 
 </manifest>
