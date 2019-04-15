@@ -14,4 +14,8 @@
         android:id="@+id/drag_drop_act"
         android:title="Drag Drop" />
 
+    <item
+        android:id="@+id/floating_act"
+        android:title="Floating" />
+
 </menu>

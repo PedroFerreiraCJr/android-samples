@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DragDropActivity.class));
                 return true;
             }
+            case R.id.floating_act: {
+                startActivity(new Intent(MainActivity.this, FloatingActivity.class));
+                return true;
+            }
 
         }
         return super.onOptionsItemSelected(item);
