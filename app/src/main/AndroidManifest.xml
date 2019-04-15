@@ -25,6 +25,8 @@
             android:name=".DragDropActivity" />
         <activity
             android:name=".FloatingActivity" />
+        <activity
+            android:name=".HTMLActivity" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service

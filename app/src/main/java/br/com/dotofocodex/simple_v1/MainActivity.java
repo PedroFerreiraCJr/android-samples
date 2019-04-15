@@ -118,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             }
+            case R.id.html_act: {
+                startActivity(new Intent(MainActivity.this, HTMLActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

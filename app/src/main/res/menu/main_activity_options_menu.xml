@@ -22,4 +22,8 @@
         android:id="@+id/make_a_call_act"
         android:title="Make a Call" />
 
+    <item
+        android:id="@+id/html_act"
+        android:title="Html" />
+
 </menu>
