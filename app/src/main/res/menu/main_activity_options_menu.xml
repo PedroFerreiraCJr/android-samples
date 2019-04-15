@@ -18,4 +18,8 @@
         android:id="@+id/floating_act"
         android:title="Floating" />
 
+    <item
+        android:id="@+id/make_a_call_act"
+        android:title="Make a Call" />
+
 </menu>

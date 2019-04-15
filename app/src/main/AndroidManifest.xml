@@ -36,4 +36,7 @@
 
     <!-- used by floating activity -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- used by main acitivty -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 </manifest>
