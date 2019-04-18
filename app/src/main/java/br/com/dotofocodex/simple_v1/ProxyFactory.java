@@ -17,13 +17,9 @@ public class ProxyFactory {
 
         @Override
         public void onClick(View v) {
-            try {
-                Log.i("ABC", "Before call onClick...");
-                listener.onClick(v);
-                Log.i("ABC", "After call onClick...");
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+            Log.i("ABC", "Before call onClick...");
+            listener.onClick(v);
+            Log.i("ABC", "After call onClick...");
         }
     }
 
@@ -37,13 +33,9 @@ public class ProxyFactory {
 
         @Override
         public void onClick(View v) {
-            try {
-                Log.i("ABC", String.valueOf(new Date().getTime()));
-                listener.onClick(v);
-                Log.i("ABC", String.valueOf(new Date().getTime()));
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+            Log.i("ABC", String.valueOf(new Date().getTime()));
+            listener.onClick(v);
+            Log.i("ABC", String.valueOf(new Date().getTime()));
         }
     }
 }
