@@ -19,6 +19,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -120,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.html_act: {
                 startActivity(new Intent(MainActivity.this, HTMLActivity.class));
+                return true;
+            }
+            case R.id.crash: {
+                String[] values = new String[0];
+                Log.i("ABC", values[0]);
+                return true;
+            }
+            case R.id.proxy_act: {
+                startActivity(new Intent(MainActivity.this, MainActivityProxy.class));
                 return true;
             }
         }
@@ -332,6 +342,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }, 10000);
-
     }
+
 }

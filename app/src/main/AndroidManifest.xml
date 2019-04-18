@@ -3,6 +3,7 @@
     package="br.com.dotofocodex.simple_v1">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,6 +28,8 @@
             android:name=".FloatingActivity" />
         <activity
             android:name=".HTMLActivity" />
+        <activity
+            android:name=".MainActivityProxy" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service

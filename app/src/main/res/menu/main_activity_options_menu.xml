@@ -26,4 +26,12 @@
         android:id="@+id/html_act"
         android:title="Html" />
 
+    <item
+        android:id="@+id/crash"
+        android:title="Crash" />
+
+    <item
+        android:id="@+id/proxy_act"
+        android:title="Proxy Activity" />
+
 </menu>
