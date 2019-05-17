@@ -34,4 +34,8 @@
         android:id="@+id/proxy_act"
         android:title="Proxy Activity" />
 
+    <item
+        android:id="@+id/thread_act"
+        android:title="Thread Activity" />
+
 </menu>

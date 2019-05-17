@@ -37,7 +37,7 @@ public class CustomToastActivity extends AppCompatActivity {
 
     private void show() {
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toast, (ViewGroup) findViewById(R.id.toast_layout_root));
+        View layout = inflater.inflate(R.layout.toast, findViewById(R.id.toast_layout_root));
 
         ImageView image = layout.findViewById(R.id.image);
         image.setImageResource(R.mipmap.ic_launcher);

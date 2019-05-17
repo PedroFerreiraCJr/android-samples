@@ -132,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MainActivityProxy.class));
                 return true;
             }
+            case R.id.thread_act: {
+                startActivity(new Intent(MainActivity.this, ThreadActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

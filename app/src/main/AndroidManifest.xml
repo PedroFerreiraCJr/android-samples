@@ -31,6 +31,9 @@
         <activity
             android:name=".MainActivityProxy" />
 
+        <activity
+            android:name=".ThreadActivity" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".FloatingWidgetService"
