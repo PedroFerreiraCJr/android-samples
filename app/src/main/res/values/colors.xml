@@ -12,5 +12,7 @@
     <color name="buttonText">#FFFFFF</color>
 
     <color name="portal">#0288d1</color>
+    <color name="yellow">#ffff00</color>
+    <color name="black">#000000</color>
 
 </resources>
