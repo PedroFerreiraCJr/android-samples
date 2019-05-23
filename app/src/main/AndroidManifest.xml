@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
-            android:name=".MainActivity">
+            android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,24 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ThemeActivity" />
+            android:name=".activity.ThemeActivity" />
         <activity
-            android:name=".CustomToastActivity" />
+            android:name=".activity.CustomToastActivity" />
         <activity
-            android:name=".DragDropActivity" />
+            android:name=".activity.DragDropActivity" />
         <activity
-            android:name=".FloatingActivity" />
+            android:name=".activity.FloatingActivity" />
         <activity
-            android:name=".HTMLActivity" />
+            android:name=".activity.HTMLActivity" />
         <activity
-            android:name=".MainActivityProxy" />
+            android:name=".proxy.MainActivityProxy" />
 
         <activity
-            android:name=".ThreadActivity" />
+            android:name=".activity.ThreadActivity" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
-            android:name=".FloatingWidgetService"
+            android:name=".service.android.FloatingWidgetService"
             android:enabled="true"
             android:exported="false" />
 

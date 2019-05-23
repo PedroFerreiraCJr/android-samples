@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import br.com.dotofocodex.simple_v1.model.Album;
+import br.com.dotofocodex.simple_v1.R;
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHolder> {
 

@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.service.android;
 
 import android.app.Service;
 import android.content.Intent;
@@ -17,6 +17,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import br.com.dotofocodex.simple_v1.R;
+import br.com.dotofocodex.simple_v1.activity.MainActivity;
 
 public class FloatingWidgetService extends Service implements View.OnClickListener {
 

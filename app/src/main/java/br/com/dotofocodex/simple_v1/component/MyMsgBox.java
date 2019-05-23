@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.component;
 
 import android.content.Context;
 import android.os.Handler;
@@ -11,6 +11,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import br.com.dotofocodex.simple_v1.R;
 
 public class MyMsgBox {
 

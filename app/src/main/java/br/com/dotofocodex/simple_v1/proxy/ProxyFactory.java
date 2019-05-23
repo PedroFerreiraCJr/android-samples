@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.proxy;
 
 import android.util.Log;
 import android.view.View;

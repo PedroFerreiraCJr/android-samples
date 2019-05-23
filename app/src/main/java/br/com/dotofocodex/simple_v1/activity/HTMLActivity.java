@@ -1,10 +1,12 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.activity;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.TextView;
+
+import br.com.dotofocodex.simple_v1.R;
 
 public class HTMLActivity extends AppCompatActivity {
 

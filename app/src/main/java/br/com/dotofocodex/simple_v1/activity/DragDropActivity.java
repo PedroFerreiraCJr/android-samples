@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.activity;
 
 import android.content.ClipData;
 import android.graphics.drawable.Drawable;
@@ -10,6 +10,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import br.com.dotofocodex.simple_v1.R;
 
 public class DragDropActivity extends AppCompatActivity {
 

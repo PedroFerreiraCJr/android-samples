@@ -1,10 +1,12 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import br.com.dotofocodex.simple_v1.R;
 
 public class ThemeActivity extends AppCompatActivity {
 

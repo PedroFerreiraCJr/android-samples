@@ -1,9 +1,11 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.proxy;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import br.com.dotofocodex.simple_v1.R;
 
 public class MainActivityProxy extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+
+import br.com.dotofocodex.simple_v1.service.android.FloatingWidgetService;
+import br.com.dotofocodex.simple_v1.R;
 
 public class FloatingActivity extends AppCompatActivity {
 

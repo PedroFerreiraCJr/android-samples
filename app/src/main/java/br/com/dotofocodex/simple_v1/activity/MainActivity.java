@@ -1,4 +1,4 @@
-package br.com.dotofocodex.simple_v1;
+package br.com.dotofocodex.simple_v1.activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -32,6 +32,12 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import br.com.dotofocodex.simple_v1.model.Album;
+import br.com.dotofocodex.simple_v1.proxy.MainActivityProxy;
+import br.com.dotofocodex.simple_v1.R;
+import br.com.dotofocodex.simple_v1.adapter.AlbumsAdapter;
+import br.com.dotofocodex.simple_v1.adapter.AlbumsAdapterListener;
 
 public class MainActivity extends AppCompatActivity {
 
