@@ -14,4 +14,20 @@
         android:textAllCaps="false"
         android:text="Share!" />
 
+    <Button
+        android:id="@+id/bt_instagram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textAllCaps="false"
+        android:text="Instagram" />
+
+    <Button
+        android:id="@+id/bt_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textAllCaps="false"
+        android:text="Facebook" />
+
 </LinearLayout>

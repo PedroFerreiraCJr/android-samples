@@ -1,10 +1,13 @@
 package br.com.dotofocodex.simple_v1.activity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -40,6 +43,62 @@ public class ShareActivity extends AppCompatActivity {
                 i.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
                 i.putExtra(Intent.EXTRA_TEXT, "Your body is here");
                 startActivity(Intent.createChooser(i, "Share using"));
+            }
+        });
+
+        Button inst = findViewById(R.id.bt_instagram);
+        inst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*
+                    Uri uri = Uri.parse("http://instagram.com/_u/xxx");
+                    Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+
+                    likeIng.setPackage("com.instagram.android");
+
+                    try {
+                        startActivity(likeIng);
+                    } catch (ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/xxx")));
+                    }
+                */
+
+                Uri uri = Uri.parse("https://www.instagram.com/pedrojunior_2.7/?hl=pt-br");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                i.setPackage("com.instagram.android");
+
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(ShareActivity.this, "App Instagram not found", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/pedrojunior_2.7/?hl=pt-br")));
+                }
+            }
+        });
+
+        Button face = findViewById(R.id.bt_facebook);
+        face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*
+                    https://stackoverflow.com/questions/4810803/open-facebook-page-from-android-app
+                    try {
+                        context.getPackageManager().getPackageInfo("com.facebook.katana", 0);
+                        return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/<id_here>"));
+                    } catch (Exception e) {
+                        return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/<user_name_here>"));
+                    }
+                */
+                Uri uri = Uri.parse("https://pt-br.facebook.com/neymarjr/");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                i.setPackage("com.facebook.katana");
+
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(ShareActivity.this, "App Facebook not found", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://pt-br.facebook.com/neymarjr/")));
+                }
             }
         });
     }
