@@ -146,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 return true;
             }
+            case R.id.recycler_act: {
+                startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

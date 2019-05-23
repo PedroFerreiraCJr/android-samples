@@ -42,4 +42,8 @@
         android:id="@+id/about_act"
         android:title="About Activity" />
 
+    <item
+        android:id="@+id/recycler_act"
+        android:title="Recycler Activity" />
+
 </menu>
