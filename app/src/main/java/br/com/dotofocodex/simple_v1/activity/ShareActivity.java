@@ -101,5 +101,40 @@ public class ShareActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        Button rate = findViewById(R.id.bt_rate);
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               /*
+                    Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+                    Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                    // To count with Play market backstack, After pressing back button,
+                    // to taken back to our application, we need to add following flags to intent.
+                    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                                    Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                                    Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    try {
+                        startActivity(goToMarket);
+                    } catch (ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
+                    }
+                */
+
+                //Uri uri = Uri.parse("market://details?id=" + ShareActivity.this.getPackageName());
+                Uri uri = Uri.parse("market://details?id=br.com.dotofcodex.samplefcm");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(ShareActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + ShareActivity.this.getPackageName())));
+                }
+            }
+        });
     }
 }
