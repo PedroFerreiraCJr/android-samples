@@ -150,6 +150,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
                 return true;
             }
+            case R.id.share_act: {
+                startActivity(new Intent(MainActivity.this, ShareActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

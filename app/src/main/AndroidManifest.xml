@@ -62,6 +62,9 @@
         <activity
             android:name=".activity.RecyclerViewActivity" />
 
+        <activity
+            android:name=".activity.ShareActivity" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"

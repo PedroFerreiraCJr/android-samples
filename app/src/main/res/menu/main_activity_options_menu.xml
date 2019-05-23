@@ -46,4 +46,8 @@
         android:id="@+id/recycler_act"
         android:title="Recycler Activity" />
 
+    <item
+        android:id="@+id/share_act"
+        android:title="Share Activity" />
+
 </menu>
