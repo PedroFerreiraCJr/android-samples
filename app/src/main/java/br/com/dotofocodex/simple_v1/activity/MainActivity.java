@@ -158,6 +158,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TabActivity.class));
                 return true;
             }
+            case R.id.order_act: {
+                startActivity(new Intent(MainActivity.this, OrderActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

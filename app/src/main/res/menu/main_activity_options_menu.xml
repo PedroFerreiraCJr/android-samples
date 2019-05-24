@@ -54,4 +54,8 @@
         android:id="@+id/tab_act"
         android:title="Tab Activity" />
 
+    <item
+        android:id="@+id/order_act"
+        android:title="Order Activity" />
+
 </menu>

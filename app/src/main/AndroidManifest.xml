@@ -68,6 +68,9 @@
         <activity
             android:name=".activity.TabActivity" />
 
+        <activity
+            android:name=".activity.OrderActivity" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"
