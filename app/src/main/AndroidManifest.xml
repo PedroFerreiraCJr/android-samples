@@ -65,6 +65,9 @@
         <activity
             android:name=".activity.ShareActivity" />
 
+        <activity
+            android:name=".activity.TabActivity" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"

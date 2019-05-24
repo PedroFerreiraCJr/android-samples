@@ -154,6 +154,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ShareActivity.class));
                 return true;
             }
+            case R.id.tab_act: {
+                startActivity(new Intent(MainActivity.this, TabActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

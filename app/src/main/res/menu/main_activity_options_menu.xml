@@ -50,4 +50,8 @@
         android:id="@+id/share_act"
         android:title="Share Activity" />
 
+    <item
+        android:id="@+id/tab_act"
+        android:title="Tab Activity" />
+
 </menu>
