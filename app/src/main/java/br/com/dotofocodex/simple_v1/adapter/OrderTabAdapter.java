@@ -1,5 +1,7 @@
 package br.com.dotofocodex.simple_v1.adapter;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -53,7 +55,7 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
 
         switch (i) {
             case 0: {
-                f = new OrderTab0Fragment();
+                f = OrderTab0Fragment.getInstance();
                 break;
             }
             case 1: {
@@ -105,29 +107,99 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         return data;
     }
 
+    @SuppressLint("ValidFragment")
     public static final class OrderTab0Fragment extends Fragment {
+        private static OrderTab0Fragment instance;
 
-        public OrderTab0Fragment() {
+        private View view;
+
+        private OrderTab0Fragment() {
             super();
+        }
+
+        @Override
+        public void onAttach(Context context) {
+            super.onAttach(context);
+        }
+
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
         }
 
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            final View v = inflater.inflate(R.layout.fragment_order0, container, false);
+            if (this.view == null) {
+                this.view = inflater.inflate(R.layout.fragment_order0, container, false);
 
-            // bind to recycler view
-            RecyclerView rv = v.findViewById(R.id.rv_order0);
+                // bind to recycler view
+                final RecyclerView rv = this.view.findViewById(R.id.rv_order0);
 
-            // configure the layout manager for recycler view
-            rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                // configure the layout manager for recycler view
+                rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            // set the adapter of recycler view
-            rv.setAdapter(new Order0RecyclerViewAdapter(getContext(), v, of(5)));
-            rv.setHasFixedSize(true);
-            return v;
+                // set the adapter of recycler view
+                // selection tracker
+                // https://www.thiengo.com.br/selectiontracker-para-selecao-de-itens-no-recyclerview-android
+                rv.setAdapter(new Order0RecyclerViewAdapter(getContext(), this.view, of(5)));
+
+                rv.setHasFixedSize(true);
+            }
+
+            return this.view;
         }
 
+        @Override
+        public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+        }
+
+        @Override
+        public void onDestroyView() {
+            super.onDestroyView();
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+        }
+
+        @Override
+        public void onDetach() {
+            super.onDetach();
+        }
+
+        public static final Fragment getInstance() {
+            if (instance == null) {
+                synchronized (Order0RecyclerViewAdapter.class) {
+                    if (instance == null) {
+                        instance = new OrderTab0Fragment();
+                    }
+                }
+            }
+            return instance;
+        }
     }
 
     public static final class OrderTab1Fragment extends Fragment {

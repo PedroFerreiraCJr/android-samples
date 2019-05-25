@@ -3,7 +3,6 @@ package br.com.dotofocodex.simple_v1.activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -34,7 +33,7 @@ public class OrderActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab_order);
         fab.setOnClickListener(view -> {
             fab.hide();
-            new Handler().postDelayed(() -> fab.show(), 5000);
+            new Handler().postDelayed(() -> fab.show(), 2000);
         });
         /*
         fab.setOnClickListener(view -> Snackbar

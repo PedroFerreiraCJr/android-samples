@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.FloatingActionButton
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fab_order"
+    style="@style/Widget.MaterialComponents.FloatingActionButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end"
-    android:layout_margin="16dp"
-    android:src="@android:drawable/ic_dialog_email" />
+    android:layout_margin="8dp"
+    android:clickable="true"
+    app:srcCompat="@android:drawable/ic_dialog_email"
+    app:fabSize="normal"
+    app:maxImageSize="16dp"
+    app:backgroundTint="@color/green"
+    app:borderWidth="0dp"
+    app:rippleColor="@color/black"
+    app:elevation="6dp" />
+
+<!--
+    if you want to use vector drawables as a icon of fab, use property: app:srcCompat="@drawable/icon"
+    main attributes:
+    Icon
+        app:srcCompat
+        app:tint
+        app:maxImageSize
+    Size
+        app:fabSize
+        app:fabCustomSize
+    Background
+        app:backgroundTint
+    Ripple
+        app:rippleColor
+    Border
+        app:borderWidth
+    Elevation
+        app:elevation
+        app:hoveredFocusedTranslationZ
+        app:pressedTranslationZ
+    Motion
+        app:showMotionSpec
+        app:hideMotionSpec
+-->

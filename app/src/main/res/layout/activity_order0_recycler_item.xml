@@ -28,26 +28,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:layout_weight="40"
+            android:layout_marginRight="5dp"
+            android:layout_weight="100"
             android:textAlignment="viewStart"
             android:text="none"
             tools:ignore="RtlCompat" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="55" />
 
         <!--
             consult this link for more information about this customization:
             https://stackoverflow.com/questions/42761099/how-to-create-the-checkbox-in-circular-shape
         -->
         <CheckBox
+            android:id="@+id/cb_recycler_item_order0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:button="@drawable/checkbox_selector"
-            android:checked="false"
-            android:layout_weight="5" />
+            android:layout_marginRight="5dp"
+            android:checked="false" />
 
     </LinearLayout>
 
