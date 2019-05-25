@@ -1,6 +1,7 @@
 package br.com.dotofocodex.simple_v1.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -21,8 +22,8 @@ public class OrderActivity extends AppCompatActivity {
 
     private void init() {
         // bind to the view element
-        ViewPager vp = findViewById(R.id.vp_order0);
         TabLayout tl = findViewById(R.id.tl_order0);
+        ViewPager vp = findViewById(R.id.vp_order0);
 
         // create the adapter
         vp.setAdapter(new OrderTabAdapter(getSupportFragmentManager()));
@@ -31,9 +32,15 @@ public class OrderActivity extends AppCompatActivity {
         tl.setupWithViewPager(vp);
 
         FloatingActionButton fab = findViewById(R.id.fab_order);
+        fab.setOnClickListener(view -> {
+            fab.hide();
+            new Handler().postDelayed(() -> fab.show(), 5000);
+        });
+        /*
         fab.setOnClickListener(view -> Snackbar
             .make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show());
+        */
     }
 
 }

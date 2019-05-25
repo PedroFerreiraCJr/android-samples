@@ -27,7 +27,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activity.MainActivity">
+            android:name=".activity.MainActivity"
+            android:enabled="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,40 +38,52 @@
         </activity>
 
         <activity
-            android:name=".activity.ThemeActivity" />
+            android:name=".activity.ThemeActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.CustomToastActivity" />
+            android:name=".activity.CustomToastActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.DragDropActivity" />
+            android:name=".activity.DragDropActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.FloatingActivity" />
+            android:name=".activity.FloatingActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.HTMLActivity" />
+            android:name=".activity.HTMLActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".proxy.MainActivityProxy" />
+            android:name=".proxy.MainActivityProxy"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.ThreadActivity" />
+            android:name=".activity.ThreadActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.AboutActivity" />
+            android:name=".activity.AboutActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.RecyclerViewActivity" />
+            android:name=".activity.RecyclerViewActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.ShareActivity" />
+            android:name=".activity.ShareActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.TabActivity" />
+            android:name=".activity.TabActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.OrderActivity" />
+            android:name=".activity.OrderActivity"
+            android:screenOrientation="portrait" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service

@@ -97,6 +97,14 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         return f;
     }
 
+    private static final List<String> of(int num) {
+        List<String> data = new ArrayList<>(num);
+        for (int i=1; i<=num; i++) {
+            data.add("Value " + i);
+        }
+        return data;
+    }
+
     public static final class OrderTab0Fragment extends Fragment {
 
         public OrderTab0Fragment() {
@@ -107,23 +115,19 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             final View v = inflater.inflate(R.layout.fragment_order0, container, false);
-            /*
+
             // bind to recycler view
             RecyclerView rv = v.findViewById(R.id.rv_order0);
 
-            // layout manager
+            // configure the layout manager for recycler view
             rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            List<String> data = new ArrayList<>(5);
-            for (int i=1; i<=5; i++) {
-                data.add("Value " + i);
-            }
-
-            // adapter
-            rv.setAdapter(new Order0RecyclerViewAdapter(data));
-            */
+            // set the adapter of recycler view
+            rv.setAdapter(new Order0RecyclerViewAdapter(getContext(), v, of(5)));
+            rv.setHasFixedSize(true);
             return v;
         }
+
     }
 
     public static final class OrderTab1Fragment extends Fragment {
