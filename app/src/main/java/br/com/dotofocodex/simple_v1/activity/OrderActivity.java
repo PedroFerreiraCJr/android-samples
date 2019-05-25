@@ -30,7 +30,7 @@ public class OrderActivity extends AppCompatActivity {
         // configure de tablayout with the adapter
         tl.setupWithViewPager(vp);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab_order);
         fab.setOnClickListener(view -> Snackbar
             .make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show());
