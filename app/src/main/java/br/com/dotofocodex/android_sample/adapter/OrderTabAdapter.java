@@ -2,6 +2,7 @@ package br.com.dotofocodex.android_sample.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,8 +11,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,7 +24,9 @@ import java.util.List;
 import br.com.dotofocodex.android_sample.R;
 
 public class OrderTabAdapter extends FragmentPagerAdapter {
+
     private static final String TAG = "OrderTabAdapter";
+
     private static final String[] titles = new String[] {
         "Passo 01",
         "Passo 02",
@@ -135,10 +140,11 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             if (this.view == null) {
+                Log.d(TAG, "onCreateView: view is null!");
                 this.view = inflater.inflate(R.layout.fragment_order0, container, false);
 
                 // bind to recycler view
-                final RecyclerView rv = this.view.findViewById(R.id.rv_order0);
+                RecyclerView rv = this.view.findViewById(R.id.rv_order0);
 
                 // configure the layout manager for recycler view
                 rv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -148,6 +154,10 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
                 // https://www.thiengo.com.br/selectiontracker-para-selecao-de-itens-no-recyclerview-android
                 rv.setAdapter(new Order0RecyclerViewAdapter(getContext(), this.view, of(5)));
                 rv.setHasFixedSize(true);
+
+                SimpleSwipeCallback ssc = new SimpleSwipeCallback();
+                ItemTouchHelper ith = new ItemTouchHelper(ssc);
+                ith.attachToRecyclerView(rv);
             }
 
             return this.view;
@@ -335,6 +345,53 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.fragment_order9, container, false);
             return v;
+        }
+    }
+
+    /*
+      from where this come from:
+    * https://codeburst.io/android-swipe-menu-with-recyclerview-8f28a235ff28
+    * */
+    public static class SimpleSwipeCallback extends ItemTouchHelper.Callback {
+
+        private boolean swipeBack;
+
+        @Override
+        public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+            return makeMovementFlags(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+        }
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+        }
+
+        @Override
+        public int convertToAbsoluteDirection(int flags, int layoutDirection) {
+            if (swipeBack) {
+                swipeBack = false;
+                return 0;
+            }
+            return super.convertToAbsoluteDirection(flags, layoutDirection);
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+            if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                setTouchListener(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+            }
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+
+        private void setTouchListener(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,float dX, float dY,int actionState, boolean isCurrentlyActive) {
+            recyclerView.setOnTouchListener((v, event) -> {
+                swipeBack = event.getAction() == MotionEvent.ACTION_CANCEL || event.getAction() == MotionEvent.ACTION_UP;
+                return false;
+            });
         }
     }
 }

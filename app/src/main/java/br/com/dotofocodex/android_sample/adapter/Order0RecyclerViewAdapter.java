@@ -6,7 +6,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -70,16 +72,18 @@ public class Order0RecyclerViewAdapter extends RecyclerView.Adapter<Order0Recycl
         return this.data.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener, View.OnTouchListener, CompoundButton.OnCheckedChangeListener {
         private final Order0RecyclerViewAdapter adapter;
         public ImageView iv;
         public TextView tv;
         public CheckBox cb;
         public CardView cv;
         public int i;
+        private final GestureDetector detector;
 
         private ViewHolder(Order0RecyclerViewAdapter adapter, View view) {
             super(view);
+            this.detector = new GestureDetector(adapter.ctx, new SimpleGestureImpl());
             this.adapter = adapter;
             this.iv = adapter.parent.findViewById(R.id.iv_order0);
             this.tv = view.findViewById(R.id.tv_recycler_item_order0);
@@ -87,10 +91,14 @@ public class Order0RecyclerViewAdapter extends RecyclerView.Adapter<Order0Recycl
             this.cb.setOnCheckedChangeListener(this);
             this.cv = view.findViewById(R.id.cv_recycler_item_order0);
             this.cv.setOnClickListener(this);
+            this.cv.setOnLongClickListener(this);
+            // to use with gesture detector
+            //this.cv.setOnTouchListener(this);
         }
 
         @Override
         public void onClick(View v) {
+            Log.d(TAG, "onClick");
             selected(this.i, true);
         }
 
@@ -127,5 +135,56 @@ public class Order0RecyclerViewAdapter extends RecyclerView.Adapter<Order0Recycl
                 .into(iv);
             Snackbar.make(v, "Touch on CardView: " + i, Snackbar.LENGTH_LONG).show();
         }
+
+        @Override
+        public boolean onLongClick(View v) {
+            Log.d(TAG, "onLongClick");
+            Snackbar.make(v, "OnLongTouch on CardView: " + i, Snackbar.LENGTH_LONG).show();
+            return true;
+        }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN: {
+                    Log.d(TAG, "onTouch: Down");
+                    break;
+                }
+                case MotionEvent.ACTION_MOVE: {
+                    Log.d(TAG, "onTouch: Move");
+                    break;
+                }
+                case MotionEvent.ACTION_UP: {
+                    Log.d(TAG, "onTouch: Up");
+                    break;
+                }
+            }
+            return this.detector.onTouchEvent(event);
+        }
+
+        class SimpleGestureImpl extends GestureDetector.SimpleOnGestureListener {
+
+            public SimpleGestureImpl() {
+                super();
+            }
+
+            @Override
+            public boolean onDown(MotionEvent e) {
+                return true;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent e) {
+                Snackbar.make(iv, "OnLongTouch on CardView: " + i, Snackbar.LENGTH_LONG).show();
+            }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                Log.d(TAG, "onSingleTapUp");
+                selected(i, true);
+                return true;
+            }
+        }
     }
+
 }

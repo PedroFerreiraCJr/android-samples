@@ -2,10 +2,13 @@ package br.com.dotofocodex.android_sample.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import br.com.dotofocodex.android_sample.R;
 import br.com.dotofocodex.android_sample.adapter.OrderTabAdapter;
@@ -30,11 +33,13 @@ public class OrderActivity extends AppCompatActivity {
         // configure de tablayout with the adapter
         tl.setupWithViewPager(vp);
 
+        // bind the fab
         FloatingActionButton fab = findViewById(R.id.fab_order);
         fab.setOnClickListener(view -> {
             fab.hide();
             new Handler().postDelayed(() -> fab.show(), 2000);
         });
+
         /*
         fab.setOnClickListener(view -> Snackbar
             .make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
