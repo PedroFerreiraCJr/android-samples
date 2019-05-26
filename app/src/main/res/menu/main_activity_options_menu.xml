@@ -58,4 +58,8 @@
         android:id="@+id/order_act"
         android:title="Order Activity" />
 
+    <item
+        android:id="@+id/badge_act"
+        android:title="Badges Activity" />
+
 </menu>

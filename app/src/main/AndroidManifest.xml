@@ -87,6 +87,10 @@
             android:name="br.com.dotofocodex.android_sample.activity.OrderActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="br.com.dotofocodex.android_sample.activity.BadgesActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name="br.com.dotofocodex.android_sample.service.android.FloatingWidgetService"

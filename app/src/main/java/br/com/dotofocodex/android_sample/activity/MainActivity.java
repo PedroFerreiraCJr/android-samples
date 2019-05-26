@@ -162,6 +162,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, OrderActivity.class));
                 return true;
             }
+            case R.id.badge_act: {
+                startActivity(new Intent(MainActivity.this, BadgesActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
