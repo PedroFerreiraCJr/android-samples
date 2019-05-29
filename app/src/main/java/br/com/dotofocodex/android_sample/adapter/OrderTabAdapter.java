@@ -107,16 +107,11 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         return f;
     }
 
-    private static final List<String> of(int num) {
-        List<String> data = new ArrayList<>(num);
-        for (int i=1; i<=num; i++) {
-            data.add("Value " + i);
-        }
-        return data;
-    }
+
 
     @SuppressLint("ValidFragment")
     public static final class OrderTab0Fragment extends Fragment {
+
         private static OrderTab0Fragment instance;
         private static boolean instantiate;
 
@@ -124,6 +119,14 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
 
         private OrderTab0Fragment() {
             super();
+        }
+
+        private static final List<String> of(int num) {
+            List<String> data = new ArrayList<>(num);
+            for (int i=1; i<=num; i++) {
+                data.add("Value " + i);
+            }
+            return data;
         }
 
         @Override
@@ -155,8 +158,7 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
                 rv.setAdapter(new Order0RecyclerViewAdapter(getContext(), this.view, of(5)));
                 rv.setHasFixedSize(true);
 
-                SimpleSwipeCallback ssc = new SimpleSwipeCallback();
-                ItemTouchHelper ith = new ItemTouchHelper(ssc);
+                ItemTouchHelper ith = new ItemTouchHelper(new SimpleSwipeCallback());
                 ith.attachToRecyclerView(rv);
             }
 
@@ -212,7 +214,7 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
                 instance = null;
             }
             if (instance == null) {
-                synchronized (Order0RecyclerViewAdapter.class) {
+                synchronized (OrderTab0Fragment.class) {
                     if (instance == null) {
                         instance = new OrderTab0Fragment();
                     }

@@ -50,7 +50,7 @@ public class Order0RecyclerViewAdapter extends RecyclerView.Adapter<Order0Recycl
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         Log.d(TAG, "onCreateViewHolder");
-        ViewHolder vh = new ViewHolder(this, LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_order0_recycler_item, viewGroup, false));
+        ViewHolder vh = new ViewHolder(this, LayoutInflater.from(this.ctx).inflate(R.layout.activity_order0_recycler_item, viewGroup, false));
         this.holders.add(vh);
         return vh;
     }
@@ -73,13 +73,14 @@ public class Order0RecyclerViewAdapter extends RecyclerView.Adapter<Order0Recycl
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener, View.OnTouchListener, CompoundButton.OnCheckedChangeListener {
-        private final Order0RecyclerViewAdapter adapter;
+
+        private Order0RecyclerViewAdapter adapter;
         public ImageView iv;
         public TextView tv;
         public CheckBox cb;
         public CardView cv;
         public int i;
-        private final GestureDetector detector;
+        private GestureDetector detector;
 
         private ViewHolder(Order0RecyclerViewAdapter adapter, View view) {
             super(view);
