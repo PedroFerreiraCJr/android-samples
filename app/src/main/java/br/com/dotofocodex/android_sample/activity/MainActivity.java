@@ -166,6 +166,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, BadgesActivity.class));
                 return true;
             }
+            case R.id.bottom_sheet_act: {
+                startActivity(new Intent(MainActivity.this, BottomSheetActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

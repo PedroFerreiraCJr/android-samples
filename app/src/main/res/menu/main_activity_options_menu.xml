@@ -62,4 +62,8 @@
         android:id="@+id/badge_act"
         android:title="Badges Activity" />
 
+    <item
+        android:id="@+id/bottom_sheet_act"
+        android:title="Bottom Sheet Activity" />
+
 </menu>
