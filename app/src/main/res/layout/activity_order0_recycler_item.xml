@@ -2,22 +2,50 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_recycler_item_order0"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="40dp"
     android:layout_marginLeft="5dp"
     android:layout_marginTop="5dp"
     android:layout_marginRight="5dp"
+    android:layout_marginBottom="0dp"
+    app:cardBackgroundColor="@color/yellow"
     app:cardElevation="2dp"
     app:cardCornerRadius="2dp"
-    app:contentPadding="5dp"
-    android:gravity="center_vertical">
+    app:contentPadding="2dp">
 
-    <TextView
-        android:id="@+id/tv_recycler_item_order0"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textAlignment="center"
-        android:text="none" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/tv_recycler_item_order0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="100"
+            android:textAlignment="viewStart"
+            android:text="none"
+            tools:ignore="RtlCompat" />
+
+        <!--
+            consult this link for more information about this customization:
+            https://stackoverflow.com/questions/42761099/how-to-create-the-checkbox-in-circular-shape
+        -->
+        <CheckBox
+            android:id="@+id/cb_recycler_item_order0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox_selector"
+            android:layout_marginRight="5dp"
+            android:checked="false" />
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

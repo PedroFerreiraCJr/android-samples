@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.dotofocodex.simple_v1">
+    package="br.com.dotofocodex.android_sample">
 
     <!-- used by floating activity -->
     <uses-permission
@@ -14,20 +14,24 @@
         "android.permission.INTERNET" />
 
     <application
-        android:name=".App"
+        android:name="br.com.dotofocodex.android_sample.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activity.MainActivity">
+            android:name=".activity.MainActivity"
+            android:enabled="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,44 +40,64 @@
         </activity>
 
         <activity
-            android:name=".activity.ThemeActivity" />
+            android:name=".activity.ThemeActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.CustomToastActivity" />
+            android:name=".activity.CustomToastActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.DragDropActivity" />
+            android:name=".activity.DragDropActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.FloatingActivity" />
+            android:name=".activity.FloatingActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.HTMLActivity" />
+            android:name=".activity.HTMLActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".proxy.MainActivityProxy" />
+            android:name=".proxy.MainActivityProxy"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.ThreadActivity" />
+            android:name=".activity.ThreadActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.AboutActivity" />
+            android:name=".activity.AboutActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.RecyclerViewActivity" />
+            android:name=".activity.RecyclerViewActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.ShareActivity" />
+            android:name=".activity.ShareActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.TabActivity" />
+            android:name=".activity.TabActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.OrderActivity" />
+            android:name=".activity.OrderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BadgesActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BottomSheetActivity"
+            android:screenOrientation="portrait" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
-            android:name=".service.android.FloatingWidgetService"
+            android:name="br.com.dotofocodex.android_sample.service.android.FloatingWidgetService"
             android:enabled="true"
             android:exported="false" />
 

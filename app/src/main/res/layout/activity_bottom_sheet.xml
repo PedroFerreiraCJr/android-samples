@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_bottom_sheet_expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Button.Blue"
+            android:textAllCaps="false"
+            android:text="Expand Bottom Sheet" />
+
+        <Button
+            android:id="@+id/bt_bottom_sheet_collapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Button.Orange"
+            android:textAllCaps="false"
+            android:text="Collapse Bottom Sheet" />
+
+        <Button
+            android:id="@+id/bt_bottom_sheet_hidden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Button.Transparent"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:text="Hide Bottom Sheet" />
+    </LinearLayout>
+
+    <include layout="@layout/activity_bottom_sheet_main" />
+</android.support.design.widget.CoordinatorLayout>

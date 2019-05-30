@@ -28,4 +28,16 @@
         <item name="android:padding">10dp</item>
     </style>
 
+    <style name="Button.Blue" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/portal</item>
+    </style>
+
+    <style name="Button.Orange" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/orange</item>
+    </style>
+
+    <style name="Button.Transparent" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/transparent</item>
+    </style>
+
 </resources>
