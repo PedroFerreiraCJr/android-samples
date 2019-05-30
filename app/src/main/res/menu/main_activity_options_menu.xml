@@ -66,4 +66,7 @@
         android:id="@+id/bottom_sheet_act"
         android:title="Bottom Sheet Activity" />
 
+    <item
+        android:id="@+id/floating_act_but_act"
+        android:title="Floating Action Button Activity" />
 </menu>

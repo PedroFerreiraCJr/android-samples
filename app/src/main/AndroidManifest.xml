@@ -14,14 +14,14 @@
         "android.permission.INTERNET" />
 
     <application
-        android:name="br.com.dotofocodex.android_sample.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true"
+        android:hardwareAccelerated="false"
         android:largeHeap="true">
 
         <meta-data
@@ -95,11 +95,14 @@
             android:name=".activity.BottomSheetActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity.FloatingActionButtonActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
-            android:name="br.com.dotofocodex.android_sample.service.android.FloatingWidgetService"
+            android:name=".service.android.FloatingWidgetService"
             android:enabled="true"
             android:exported="false" />
-
     </application>
 </manifest>
