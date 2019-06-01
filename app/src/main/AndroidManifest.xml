@@ -112,6 +112,14 @@
             android:name=".activity.PictureActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity.PopupActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.TextViewJustifyActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"

@@ -174,6 +174,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
                 return true;
             }
+            case R.id.camera_act: {
+                startActivity(new Intent(MainActivity.this, CameraActivity.class));
+                return true;
+            }
+            case R.id.popup_act: {
+                startActivity(new Intent(MainActivity.this, PopupActivity.class));
+                return true;
+            }
+            case R.id.textview_justify_act: {
+                startActivity(new Intent(MainActivity.this, TextViewJustifyActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

@@ -69,4 +69,16 @@
     <item
         android:id="@+id/floating_act_but_act"
         android:title="Floating Action Button Activity" />
+
+    <item
+        android:id="@+id/camera_act"
+        android:title="Camera Activity" />
+
+    <item
+        android:id="@+id/popup_act"
+        android:title="Popup Activity" />
+
+    <item
+        android:id="@+id/textview_justify_act"
+        android:title="TextView Justify Activity" />
 </menu>
