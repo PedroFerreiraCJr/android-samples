@@ -3,6 +3,7 @@ package br.com.dotofocodex.android_sample.activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import br.com.dotofocodex.android_sample.R;
@@ -30,6 +31,10 @@ public class TextViewJustifyActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             tv.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
         }
+
+        WebView wv = findViewById(R.id.wv_activity_textview_justify);
+        wv.setVerticalScrollBarEnabled(false);
+        wv.loadData(getString(R.string.hello), "text/html; charset=utf-8", "utf-8");
     }
 
 }

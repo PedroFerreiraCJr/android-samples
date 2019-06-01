@@ -27,4 +27,17 @@
     <string name="draw_other_app_permission_denied">Draw over other app permission not available. App won\'t work without permission. Please try again.</string>
     <string name="google_maps_key"></string>
 
+
+    <string name="hello">
+        <![CDATA[
+        <html>
+            <head></head>
+            <body style="text-align:justify;color:gray;background-color:black;">
+                Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Nunc pellentesque, urna
+                nec hendrerit pellentesque, risus massa
+            </body>
+        </html>
+        ]]>
+    </string>
 </resources>
