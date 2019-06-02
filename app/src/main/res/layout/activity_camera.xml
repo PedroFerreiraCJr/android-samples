@@ -32,6 +32,17 @@
             android:text="Take Photo" />
 
         <Button
+            android:id="@+id/bt_activity_camera_angle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:padding="2dp"
+            android:textAllCaps="false"
+            android:text="Angle 0" />
+
+        <Button
             android:id="@+id/bt_activity_camera_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +51,6 @@
             android:layout_marginRight="2dp"
             android:padding="2dp"
             android:textAllCaps="false"
-            android:text="Switch Camera" />
+            android:text="Switch" />
     </LinearLayout>
 </LinearLayout>
