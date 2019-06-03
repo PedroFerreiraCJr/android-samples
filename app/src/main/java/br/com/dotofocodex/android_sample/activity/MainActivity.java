@@ -186,6 +186,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TextViewJustifyActivity.class));
                 return true;
             }
+            case R.id.async_task_act: {
+                startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

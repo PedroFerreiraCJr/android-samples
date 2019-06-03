@@ -120,6 +120,10 @@
             android:name=".activity.TextViewJustifyActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity.AsyncTaskActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"
