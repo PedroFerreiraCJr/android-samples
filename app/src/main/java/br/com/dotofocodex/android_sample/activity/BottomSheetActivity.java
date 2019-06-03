@@ -8,11 +8,13 @@ import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import br.com.dotofocodex.android_sample.R;
 
@@ -80,6 +82,13 @@ public class BottomSheetActivity extends AppCompatActivity {
             return true;
         });
 
+        Button item0 = findViewById(R.id.bt_bottom_sheet_item_0);
+        item0.setOnClickListener((View v) -> {
+            Toast t = Toast.makeText(BottomSheetActivity.this, "Item 0 clicked!", Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.TOP, 0, 0);
+            t.show();
+        });
+
         bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -135,7 +144,7 @@ public class BottomSheetActivity extends AppCompatActivity {
             ViewGroup.LayoutParams childLayoutParams = linearLayout.getLayoutParams();
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-            childLayoutParams.height = displayMetrics.heightPixels;
+            childLayoutParams.height = displayMetrics.heightPixels - 90;
             linearLayout.setLayoutParams(childLayoutParams);
         }
     }

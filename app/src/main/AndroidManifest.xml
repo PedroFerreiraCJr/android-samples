@@ -6,12 +6,17 @@
     <uses-permission
         android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- used by main acitivty -->
+    <!-- used by main activity -->
     <uses-permission
         android:name="android.permission.CALL_PHONE" />
 
     <uses-permission android:name=
         "android.permission.INTERNET" />
+
+    <!-- used by camera activity -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".App"
@@ -21,7 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false"
+        android:hardwareAccelerated="true"
         android:largeHeap="true">
 
         <meta-data
@@ -97,6 +102,22 @@
 
         <activity
             android:name=".activity.FloatingActionButtonActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CameraActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PictureActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PopupActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.TextViewJustifyActivity"
             android:screenOrientation="portrait" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
