@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import br.com.dotofocodex.android_sample.listener.AlbumsAdapterListener;
 import br.com.dotofocodex.android_sample.model.Album;
 import br.com.dotofocodex.android_sample.R;
 

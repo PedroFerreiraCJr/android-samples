@@ -85,4 +85,8 @@
     <item
         android:id="@+id/async_task_act"
         android:title="AsyncTask Activity" />
+
+    <item
+        android:id="@+id/keyboard_act"
+        android:title="Keyboard Activity" />
 </menu>

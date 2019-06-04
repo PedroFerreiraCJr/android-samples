@@ -37,7 +37,7 @@ import br.com.dotofocodex.android_sample.model.Album;
 import br.com.dotofocodex.android_sample.proxy.MainActivityProxy;
 import br.com.dotofocodex.android_sample.R;
 import br.com.dotofocodex.android_sample.adapter.AlbumsAdapter;
-import br.com.dotofocodex.android_sample.adapter.AlbumsAdapterListener;
+import br.com.dotofocodex.android_sample.listener.AlbumsAdapterListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -188,6 +188,10 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.async_task_act: {
                 startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
+                return true;
+            }
+            case R.id.keyboard_act: {
+                startActivity(new Intent(MainActivity.this, KeyboardActivity.class));
                 return true;
             }
         }

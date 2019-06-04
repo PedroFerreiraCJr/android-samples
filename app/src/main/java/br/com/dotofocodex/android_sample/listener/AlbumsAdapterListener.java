@@ -1,4 +1,4 @@
-package br.com.dotofocodex.android_sample.adapter;
+package br.com.dotofocodex.android_sample.listener;
 
 import android.widget.ImageView;
 
