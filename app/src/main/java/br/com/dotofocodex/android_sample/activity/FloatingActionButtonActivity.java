@@ -5,10 +5,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
 
 import br.com.dotofocodex.android_sample.R;
 
@@ -61,6 +63,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
 
     private void open() {
         fab0.show();
+        /*
         AnimationSet as = new AnimationSet(true);
         as.setFillEnabled(true);
         as.setInterpolator(new LinearInterpolator());
@@ -72,15 +75,36 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
 
         //fab0.startAnimation(fabOpen);
         fab0.startAnimation(translateUp);
-        isOpen = true;
+        */
+        Animation animation = new TranslateAnimation(fab0.getTranslationX(), fab0.getTranslationX(), fab0.getTranslationY(), fab0.getTranslationY() - 100.0f);
+        animation.setDuration(800);
+        animation.setFillAfter(true);
+        animation.setInterpolator(new AccelerateInterpolator());
+        animation.setRepeatCount(0);
+        animation.setRepeatMode(Animation.RESTART);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                isOpen = true;
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        fab0.startAnimation(animation);
 
     }
 
     private void close() {
+        /*
         AnimationSet as = new AnimationSet(true);
         as.setFillEnabled(true);
         as.setInterpolator(new LinearInterpolator());
         as.addAnimation(translateDown);
+        as.addAnimation(fabClose);
 
         // add more animation in the animation set;
         //as.addAnimation(fabClose);
@@ -95,11 +119,33 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 Log.d(TAG, "onAnimationEnd...");
                 isOpen = false;
+                fab0.hide();
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
             }
         });
-
+        */
+        fab3.startAnimation(rotateBackward);
+        Animation animation = new TranslateAnimation(fab0.getTranslationX(), fab0.getTranslationX(), fab0.getTranslationY() - 100.0f, 60.0f);
+        animation.setDuration(800);
+        animation.setFillAfter(true);
+        animation.setInterpolator(new AccelerateInterpolator());
+        animation.setRepeatCount(0);
+        animation.setRepeatMode(Animation.RESTART);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                isOpen = false;
+                fab0.hide();
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        fab0.startAnimation(animation);
     }
 }
