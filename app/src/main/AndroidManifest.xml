@@ -129,6 +129,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
+        <activity
+            android:name=".activity.FontActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"

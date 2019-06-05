@@ -194,6 +194,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, KeyboardActivity.class));
                 return true;
             }
+            case R.id.font_act: {
+                startActivity(new Intent(MainActivity.this, FontActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

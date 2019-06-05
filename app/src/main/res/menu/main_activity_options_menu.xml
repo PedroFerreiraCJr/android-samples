@@ -89,4 +89,8 @@
     <item
         android:id="@+id/keyboard_act"
         android:title="Keyboard Activity" />
+
+    <item
+        android:id="@+id/font_act"
+        android:title="Font Activity" />
 </menu>
