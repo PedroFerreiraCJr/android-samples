@@ -98,4 +98,8 @@
         android:id="@+id/switch_act"
         android:title="Custom Switch Activity" />
 
+    <item
+        android:id="@+id/looper_act"
+        android:title="Looper Activity" />
+
 </menu>

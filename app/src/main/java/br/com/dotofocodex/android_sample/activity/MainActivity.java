@@ -8,12 +8,12 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,11 +33,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import br.com.dotofocodex.android_sample.model.Album;
-import br.com.dotofocodex.android_sample.proxy.MainActivityProxy;
 import br.com.dotofocodex.android_sample.R;
 import br.com.dotofocodex.android_sample.adapter.AlbumsAdapter;
 import br.com.dotofocodex.android_sample.listener.AlbumsAdapterListener;
+import br.com.dotofocodex.android_sample.model.Album;
+import br.com.dotofocodex.android_sample.proxy.MainActivityProxy;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -200,6 +200,10 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.switch_act: {
                 startActivity(new Intent(MainActivity.this, SwitchActivity.class));
+                return true;
+            }
+            case R.id.looper_act: {
+                startActivity(new Intent(MainActivity.this, LooperActivity.class));
                 return true;
             }
         }
