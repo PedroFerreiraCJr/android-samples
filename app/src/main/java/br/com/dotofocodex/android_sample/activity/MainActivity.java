@@ -198,6 +198,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, FontActivity.class));
                 return true;
             }
+            case R.id.switch_act: {
+                startActivity(new Intent(MainActivity.this, SwitchActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

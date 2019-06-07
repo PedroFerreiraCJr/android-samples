@@ -93,4 +93,9 @@
     <item
         android:id="@+id/font_act"
         android:title="Font Activity" />
+
+    <item
+        android:id="@+id/switch_act"
+        android:title="Custom Switch Activity" />
+
 </menu>
