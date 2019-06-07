@@ -416,9 +416,11 @@ public class CameraActivity extends AppCompatActivity {
                 setCamera(camera);
 
                 try {
-                    this.camera.setPreviewDisplay(getHolder());
-                    this.camera.setDisplayOrientation(90);
-                    this.camera.startPreview();
+                    if (this.camera != null) {
+                        this.camera.setPreviewDisplay(getHolder());
+                        this.camera.setDisplayOrientation(90);
+                        this.camera.startPreview();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
