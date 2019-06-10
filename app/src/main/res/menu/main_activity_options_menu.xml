@@ -106,4 +106,7 @@
         android:id="@+id/transition_act"
         android:title="Transition Activity" />
 
+    <item
+        android:id="@+id/mfab_act"
+        android:title="MFab Activity" />
 </menu>

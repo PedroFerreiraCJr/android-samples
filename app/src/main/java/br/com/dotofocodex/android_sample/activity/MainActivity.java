@@ -210,6 +210,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TransitionActivity.class));
                 return true;
             }
+            case R.id.mfab_act: {
+                startActivity(new Intent(MainActivity.this, MovableFloatingActionButtonActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

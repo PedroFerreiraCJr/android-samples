@@ -149,6 +149,10 @@
             android:name=".activity.Transition1Activity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity.MovableFloatingActionButtonActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"
