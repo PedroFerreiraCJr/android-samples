@@ -102,4 +102,8 @@
         android:id="@+id/looper_act"
         android:title="Looper Activity" />
 
+    <item
+        android:id="@+id/transition_act"
+        android:title="Transition Activity" />
+
 </menu>

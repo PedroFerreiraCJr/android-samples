@@ -25,7 +25,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/TransitionTheme"
         android:hardwareAccelerated="true"
         android:largeHeap="false">
 
@@ -139,6 +139,14 @@
 
         <activity
             android:name=".activity.LooperActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.TransitionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.Transition1Activity"
             android:screenOrientation="portrait" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
