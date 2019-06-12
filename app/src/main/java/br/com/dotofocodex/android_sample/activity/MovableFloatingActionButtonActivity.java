@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import br.com.dotofocodex.android_sample.R;
 import br.com.dotofocodex.android_sample.component.MovableFloatingActionButton;
+import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
 
 /**
  * implementation from following link:
@@ -32,13 +33,18 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
 
         FloatingActionButton fab0 = findViewById(R.id.fab_activity_floating_action_button_0);
         fab0.setOnClickListener((View view) -> {
+        });
 
+        FloatingActionButton fab1 = findViewById(R.id.fab_activity_floating_action_button_1);
+        fab1.setOnClickListener((View view) -> {
         });
 
         MovableFloatingActionButton fab = findViewById(R.id.mfab_activity_floating_action_button);
         fab.setOnClickListener((View view) -> {
-            float x = view.getX() + view.getWidth() / 2;
-            float y = view.getY();
+            float wd = DisplayMetricsUtil.screenWidthByDPI(this);
+            float hd = DisplayMetricsUtil.screenWidthByDPI(this);
+            float x = view.getX() + view.getWidth() / 2.0f;
+            float y = view.getY() + view.getHeight() / 2.0f;
             String template = "X: %f, Y: %f;";
 
             /*
@@ -46,16 +52,28 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
             * right top 393.0, 38.0;
             * left bottom 3.0, 713.0;
             * right bottom 393.0, 713.0;
+            * adicionar prato, finalizar prato, finalizar pedido, resumo pedido;
             * */
 
-            float sw = screenWidth() / 2.0f;
+            float hsw = DisplayMetricsUtil.screenWidth(this) / 2.0f;
+            float hsh = DisplayMetricsUtil.screenHeight(this) / 2.0f;
 
-            if (x < sw) {
-                x += fab0.getWidth() / 2 + 20.0f;
+            // show fab to the left of the view
+            if (x < hsw) {
+                x += fab0.getWidth() / 2.0f + (20.0f * wd);
             }
 
-            if (x > sw) {
-                x -= fab0.getWidth() + fab0.getWidth() / 2 + 20.0f;
+            // show fab to the right of the view
+            if (x >= hsw) {
+                x -= fab0.getWidth() + fab0.getWidth() / 2.0f + (20.0f * wd);
+            }
+
+            if (y < hsh) {
+                y += fab0.getHeight() / 2.0f + (20.0f * hd);
+            }
+
+            if (y >= hsh) {
+                y -= fab0.getHeight() + fab0.getHeight() / 2.0f + (20.0f * hd);
             }
 
             if (show) {
@@ -73,15 +91,4 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
         });
     }
 
-    private float screenWidth() {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.widthPixels;
-    }
-
-    private float screenHeight() {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.heightPixels;
-    }
 }

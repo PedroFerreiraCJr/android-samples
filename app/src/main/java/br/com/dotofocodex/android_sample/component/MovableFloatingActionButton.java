@@ -2,15 +2,19 @@ package br.com.dotofocodex.android_sample.component;
 
 import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.dotofocodex.android_sample.App;
+import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
+
 public class MovableFloatingActionButton extends FloatingActionButton implements View.OnTouchListener {
 
     private static final float CLICK_DRAG_TOLERANCE = 10.0f;
-    private static final float SECURE_MARGIN_TOP = 35.0f;
+    private static float SECURE_MARGIN_TOP = 0.0f;
     private static final int ALPHA_100 = 255;
     private static final int ALPHA_50 = 128;
 
@@ -34,6 +38,7 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
 
     private void init() {
         setOnTouchListener(this);
+        SECURE_MARGIN_TOP = DisplayMetricsUtil.screenHeightByDPI((AppCompatActivity) getContext()) * 20.0f;
     }
 
     @Override
