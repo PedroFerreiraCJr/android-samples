@@ -19,7 +19,6 @@
         app:borderWidth="0dp"
         app:fabSize="normal" />
 
-    <!--
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_activity_floating_action_button_0"
         android:layout_width="wrap_content"
@@ -31,7 +30,7 @@
         android:visibility="invisible"
         app:borderWidth="0dp"
         app:fabSize="mini" />
-
+    <!--
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_activity_floating_action_button_1"
         android:layout_width="wrap_content"
@@ -55,5 +54,5 @@
         android:visibility="invisible"
         app:borderWidth="0dp"
         app:fabSize="mini" />
-     -->
+    -->
 </android.support.design.widget.CoordinatorLayout>
