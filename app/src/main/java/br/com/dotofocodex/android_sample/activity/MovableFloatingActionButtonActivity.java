@@ -52,8 +52,8 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
             * right top 393.0, 38.0;
             * left bottom 3.0, 713.0;
             * right bottom 393.0, 713.0;
-            * adicionar prato, finalizar prato, finalizar pedido, resumo pedido;
-            * */
+            * finalizar prato (fab0), finalizar pedido (fab1);
+            */
 
             float hsw = DisplayMetricsUtil.screenWidth(this) / 2.0f;
             float hsh = DisplayMetricsUtil.screenHeight(this) / 2.0f;
@@ -68,10 +68,12 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
                 x -= fab0.getWidth() + fab0.getWidth() / 2.0f + (20.0f * wd);
             }
 
+            // show fab at the bottom of the view
             if (y < hsh) {
                 y += fab0.getHeight() / 2.0f + (20.0f * hd);
             }
 
+            // show fab above of the view
             if (y >= hsh) {
                 y -= fab0.getHeight() + fab0.getHeight() / 2.0f + (20.0f * hd);
             }
