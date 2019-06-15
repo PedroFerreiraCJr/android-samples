@@ -93,8 +93,7 @@ public class BottomSheetActivity extends AppCompatActivity {
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View view, int i) {
-                // do something when states change
-                String desc = null;
+                String desc;
                 switch (i) {
                     case BottomSheetBehavior.STATE_EXPANDED: {
                         desc = "Expanded!";

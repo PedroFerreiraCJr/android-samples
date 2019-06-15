@@ -2,14 +2,10 @@ package br.com.dotofocodex.android_sample.component;
 
 import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-
-import br.com.dotofocodex.android_sample.App;
-import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
 
 public class MovableFloatingActionButton extends FloatingActionButton implements View.OnTouchListener {
 
@@ -38,7 +34,10 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
 
     private void init() {
         setOnTouchListener(this);
-        SECURE_MARGIN_TOP = DisplayMetricsUtil.screenHeightByDPI((AppCompatActivity) getContext()) * 20.0f;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            SECURE_MARGIN_TOP = getResources().getDimensionPixelSize(resourceId);
+        }
     }
 
     @Override

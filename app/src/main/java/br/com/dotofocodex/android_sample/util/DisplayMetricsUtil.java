@@ -1,31 +1,54 @@
 package br.com.dotofocodex.android_sample.util;
 
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+
+import br.com.dotofocodex.android_sample.App;
 
 public class DisplayMetricsUtil {
 
-    public static float screenWidth(AppCompatActivity appCompatActivity) {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        appCompatActivity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.widthPixels;
+    private static DisplayMetrics metrics;
+
+    private DisplayMetricsUtil() {
+        super();
     }
 
-    public static float screenHeight(AppCompatActivity appCompatActivity) {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        appCompatActivity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.heightPixels;
+    private static final void init() {
+        if (metrics == null) {
+            synchronized (DisplayMetricsUtil.class) {
+                if (metrics == null) {
+                    metrics = App.getInstance().getResources().getDisplayMetrics();
+                }
+            }
+        }
     }
 
-    public static int screenWidthByDPI(AppCompatActivity appCompatActivity) {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        appCompatActivity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.widthPixels / displayMetrics.densityDpi;
+    public static float screenWidthInPixels() {
+        init();
+        return metrics.widthPixels;
     }
 
-    public static int screenHeightByDPI(AppCompatActivity appCompatActivity) {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        appCompatActivity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        return displayMetrics.heightPixels / displayMetrics.densityDpi;
+    public static float screenHeightInPixels() {
+        init();
+        return metrics.heightPixels;
+    }
+
+    public static float screenWidthInPixelsDividedBy(float value) {
+        init();
+        return metrics.widthPixels / value;
+    }
+
+    public static float screenHeightInPixelsDividedBy(float value) {
+        init();
+        return metrics.heightPixels / value;
+    }
+
+    public static int pixelsToDip(float pixels) {
+        init();
+        return (int) (pixels / metrics.density);
+    }
+
+    public static float dipToPixels(float dip) {
+        init();
+        return dip * metrics.density;
     }
 }

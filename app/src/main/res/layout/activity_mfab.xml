@@ -20,11 +20,11 @@
         app:fabSize="normal" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_activity_floating_action_button_0"
+        android:id="@+id/fab_activity_movable_floating_action_button_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:src="@android:drawable/ic_dialog_info"
+        android:src="@android:drawable/ic_input_add"
         android:layout_gravity="bottom|end"
         android:elevation="6dp"
         android:visibility="invisible"
@@ -32,27 +32,14 @@
         app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_activity_floating_action_button_1"
+        android:id="@+id/fab_activity_movable_floating_action_button_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:src="@android:drawable/ic_dialog_info"
+        android:src="@android:drawable/checkbox_on_background"
         android:layout_gravity="bottom|end"
         android:elevation="6dp"
         android:visibility="invisible"
         app:borderWidth="0dp"
         app:fabSize="mini" />
-    <!--
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_activity_floating_action_button_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:src="@android:drawable/ic_dialog_info"
-            android:layout_gravity="bottom|end"
-            android:elevation="6dp"
-            android:visibility="invisible"
-            app:borderWidth="0dp"
-            app:fabSize="mini" />
-        -->
 </android.support.design.widget.CoordinatorLayout>
