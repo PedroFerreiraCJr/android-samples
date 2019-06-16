@@ -25,7 +25,6 @@ import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
  */
 public class MovableFloatingActionButtonActivity extends AppCompatActivity {
 
-    private static final String TAG = "MovableFloatingActionBu";
     private static float MARGIN;
     private static float HALF_SCREEN_WIDTH;
     private static float HALF_SCREEN_HEIGHT;

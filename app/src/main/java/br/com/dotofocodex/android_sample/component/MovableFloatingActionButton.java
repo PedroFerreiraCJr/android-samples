@@ -10,12 +10,14 @@ import android.view.ViewGroup;
 public class MovableFloatingActionButton extends FloatingActionButton implements View.OnTouchListener {
 
     private static final float CLICK_DRAG_TOLERANCE = 10.0f;
-    private static float SECURE_MARGIN_TOP = 0.0f;
     private static final int ALPHA_100 = 255;
     private static final int ALPHA_50 = 128;
+    private static float SECURE_MARGIN_TOP;
 
-    private float downRawX, downRawY;
-    private float dX, dY;
+    private float downRawX;
+    private float downRawY;
+    private float dX;
+    private float dY;
     private boolean move;
 
     public MovableFloatingActionButton(Context context) {
