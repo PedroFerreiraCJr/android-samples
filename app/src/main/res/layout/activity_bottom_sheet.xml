@@ -36,6 +36,15 @@
             android:textColor="@color/black"
             android:textAllCaps="false"
             android:text="Hide Bottom Sheet" />
+
+        <Button
+            android:id="@+id/bt_bottom_sheet_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Button.Transparent"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:text="Show Bottom Sheet Dialog" />
     </LinearLayout>
 
     <include layout="@layout/activity_bottom_sheet_main" />

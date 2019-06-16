@@ -51,4 +51,12 @@ public class DisplayMetricsUtil {
         init();
         return dip * metrics.density;
     }
+
+    public static final float getStatusBarHeight() {
+        int resourceId = App.getInstance().getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            return App.getInstance().getResources().getDimensionPixelSize(resourceId);
+        }
+        return 0.0f;
+    }
 }

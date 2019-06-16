@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -17,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import br.com.dotofocodex.android_sample.R;
+import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
 
 /***
  * Simple explanation of working way of bottom sheet:
@@ -42,6 +42,7 @@ import br.com.dotofocodex.android_sample.R;
  *  2. https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
  */
 public class BottomSheetActivity extends AppCompatActivity {
+
     private static final String TAG = "BottomSheetActivity";
 
     private LinearLayout linearLayout;
@@ -60,6 +61,9 @@ public class BottomSheetActivity extends AppCompatActivity {
 
         Button hidden = findViewById(R.id.bt_bottom_sheet_hidden);
         hidden.setOnClickListener((View v) -> bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN));
+
+        Button dialog = findViewById(R.id.bt_bottom_sheet_dialog);
+        dialog.setOnClickListener((View v) -> BottomSheetFragment.newInstance().show(getSupportFragmentManager(), TAG));
 
         linearLayout = findViewById(R.id.ll_bottom_sheet);
         // expands and collapse bottom sheet on touch
@@ -141,18 +145,22 @@ public class BottomSheetActivity extends AppCompatActivity {
     private void goFullScreen(boolean enable) {
         if (enable) {
             ViewGroup.LayoutParams childLayoutParams = linearLayout.getLayoutParams();
-            DisplayMetrics displayMetrics = new DisplayMetrics();
-            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-            childLayoutParams.height = displayMetrics.heightPixels - 90;
+            childLayoutParams.height = (int) (DisplayMetricsUtil.screenHeightInPixels() - DisplayMetricsUtil.getStatusBarHeight());
             linearLayout.setLayoutParams(childLayoutParams);
         }
     }
 
-    // https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
+    /***
+     * More information on:
+     *  https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
+     */
     public static class BottomSheetFragment extends BottomSheetDialogFragment {
 
-        public static final BottomSheetFragment newInstance() {
-            return new BottomSheetFragment();
+        private View bottomSheet;
+        private int bottomSheetPeekHeight;
+
+        public BottomSheetFragment() {
+            super();
         }
 
         @Override
@@ -163,7 +171,31 @@ public class BottomSheetActivity extends AppCompatActivity {
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.activity_bottom_sheet_main, container, false);
+            View view = inflater.inflate(R.layout.activity_bottom_sheet_main_dialog, container, false);
+
+            bottomSheet = view.findViewById(R.id.ll_bottom_sheet_dialog);
+            bottomSheetPeekHeight = getResources().getDimensionPixelSize(R.dimen.bottom_sheet_default_peek_height);
+
+            return view;
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            setupBottomSheet();
+        }
+
+        private void setupBottomSheet() {
+            BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from((View) getView().getParent());
+            bottomSheetBehavior.setPeekHeight(bottomSheetPeekHeight);
+            bottomSheetBehavior.setHideable(true);
+            ViewGroup.LayoutParams childLayoutParams = bottomSheet.getLayoutParams();
+            childLayoutParams.height = (int) DisplayMetricsUtil.screenHeightInPixels();
+            bottomSheet.setLayoutParams(childLayoutParams);
+        }
+
+        public static final BottomSheetFragment newInstance() {
+            return new BottomSheetFragment();
         }
     }
 }

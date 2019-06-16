@@ -7,6 +7,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
+
 public class MovableFloatingActionButton extends FloatingActionButton implements View.OnTouchListener {
 
     private static final float CLICK_DRAG_TOLERANCE = 10.0f;
@@ -38,10 +40,7 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
     private void init() {
         this.move = true;
         setOnTouchListener(this);
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            SECURE_MARGIN_TOP = getResources().getDimensionPixelSize(resourceId);
-        }
+        SECURE_MARGIN_TOP = DisplayMetricsUtil.getStatusBarHeight();
     }
 
     public void setMove(boolean move) {
