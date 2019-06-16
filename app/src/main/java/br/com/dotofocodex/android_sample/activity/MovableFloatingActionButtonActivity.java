@@ -64,18 +64,20 @@ public class MovableFloatingActionButtonActivity extends AppCompatActivity {
             */
 
             if (show) {
+                show = false;
+                fab.setMove(true);
                 fab0.hide();
                 fab1.hide();
-                show = false;
                 return;
             }
 
             setPositionFab0(x, y, fab0);
             setPositionFab1(x, y, fab1);
 
+            show = true;
+            fab.setMove(false);
             fab0.show();
             fab1.show();
-            show = true;
 
             Toast.makeText(MovableFloatingActionButtonActivity.this, String.format(template, x, y), Toast.LENGTH_SHORT).show();
         });

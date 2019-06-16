@@ -16,6 +16,7 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
 
     private float downRawX, downRawY;
     private float dX, dY;
+    private boolean move;
 
     public MovableFloatingActionButton(Context context) {
         super(context);
@@ -33,6 +34,7 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
     }
 
     private void init() {
+        this.move = true;
         setOnTouchListener(this);
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -40,56 +42,69 @@ public class MovableFloatingActionButton extends FloatingActionButton implements
         }
     }
 
+    public void setMove(boolean move) {
+        this.move = move;
+    }
+
+    public boolean getMove() {
+        return this.move;
+    }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
 
-        int action = event.getAction();
-        if (action == MotionEvent.ACTION_DOWN) {
-            downRawX = event.getRawX();
-            downRawY = event.getRawY();
-            dX = v.getX() - downRawX;
-            dY = v.getY() - downRawY;
-            return true; // Consumed
-        }
-        else if (action == MotionEvent.ACTION_MOVE) {
-            int viewWidth = v.getWidth();
-            int viewHeight = v.getHeight();
-
-            View viewParent = (View) v.getParent();
-            int parentWidth = viewParent.getWidth();
-            int parentHeight = viewParent.getHeight();
-
-            float newX = event.getRawX() + dX;
-            newX = Math.max(layoutParams.leftMargin, newX); // Don't allow the FAB past the left hand side of the parent
-            newX = Math.min(parentWidth - viewWidth - layoutParams.rightMargin, newX); // Don't allow the FAB past the right hand side of the parent
-
-            float newY = event.getRawY() + dY;
-            newY = Math.max(layoutParams.topMargin + SECURE_MARGIN_TOP, newY); // Don't allow the FAB past the top of the parent
-            newY = Math.min(parentHeight - viewHeight - layoutParams.bottomMargin, newY); // Don't allow the FAB past the bottom of the parent
-
-            v.animate()
-                    .x(newX)
-                    .y(newY)
-                    .setDuration(0)
-                    .start();
-
-            v.getBackground().setAlpha(ALPHA_50);
-            return true;
-        }
-        else if (action == MotionEvent.ACTION_UP) {
-            float upRawX = event.getRawX();
-            float upRawY = event.getRawY();
-
-            float upDX = upRawX - downRawX;
-            float upDY = upRawY - downRawY;
-
-            v.getBackground().setAlpha(ALPHA_100);
-
-            if (Math.abs(upDX) < CLICK_DRAG_TOLERANCE && Math.abs(upDY) < CLICK_DRAG_TOLERANCE) {
-                return performClick();
+        if (move) {
+            int action = event.getAction();
+            if (action == MotionEvent.ACTION_DOWN) {
+                downRawX = event.getRawX();
+                downRawY = event.getRawY();
+                dX = v.getX() - downRawX;
+                dY = v.getY() - downRawY;
+                return true; // Consumed
             }
-            return true;
+            else if (action == MotionEvent.ACTION_MOVE) {
+                int viewWidth = v.getWidth();
+                int viewHeight = v.getHeight();
+
+                View viewParent = (View) v.getParent();
+                int parentWidth = viewParent.getWidth();
+                int parentHeight = viewParent.getHeight();
+
+                float newX = event.getRawX() + dX;
+                newX = Math.max(layoutParams.leftMargin, newX); // Don't allow the FAB past the left hand side of the parent
+                newX = Math.min(parentWidth - viewWidth - layoutParams.rightMargin, newX); // Don't allow the FAB past the right hand side of the parent
+
+                float newY = event.getRawY() + dY;
+                newY = Math.max(layoutParams.topMargin + SECURE_MARGIN_TOP, newY); // Don't allow the FAB past the top of the parent
+                newY = Math.min(parentHeight - viewHeight - layoutParams.bottomMargin, newY); // Don't allow the FAB past the bottom of the parent
+
+                v.animate()
+                        .x(newX)
+                        .y(newY)
+                        .setDuration(0)
+                        .start();
+
+                v.getBackground().setAlpha(ALPHA_50);
+                return true;
+            }
+            else if (action == MotionEvent.ACTION_UP) {
+                float upRawX = event.getRawX();
+                float upRawY = event.getRawY();
+
+                float upDX = upRawX - downRawX;
+                float upDY = upRawY - downRawY;
+
+                v.getBackground().setAlpha(ALPHA_100);
+
+                if (Math.abs(upDX) < CLICK_DRAG_TOLERANCE && Math.abs(upDY) < CLICK_DRAG_TOLERANCE) {
+                    return performClick();
+                }
+                return true;
+            }
+            else {
+                return super.onTouchEvent(event);
+            }
         }
         else {
             return super.onTouchEvent(event);
