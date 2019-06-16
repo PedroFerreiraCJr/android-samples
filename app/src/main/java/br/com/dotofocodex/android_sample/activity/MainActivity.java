@@ -214,6 +214,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MovableFloatingActionButtonActivity.class));
                 return true;
             }
+            case R.id.drawer_layout_act: {
+                startActivity(new Intent(MainActivity.this, DrawerLayoutActivity.class));
+                return true;
+            }
+            case R.id.mobile_data_act: {
+                startActivity(new Intent(MainActivity.this, MobileDataActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

@@ -109,4 +109,12 @@
     <item
         android:id="@+id/mfab_act"
         android:title="MFab Activity" />
+
+    <item
+        android:id="@+id/drawer_layout_act"
+        android:title="Drawer Layout Activity" />
+
+    <item
+        android:id="@+id/mobile_data_act"
+        android:title="Mobile Data Activity" />
 </menu>

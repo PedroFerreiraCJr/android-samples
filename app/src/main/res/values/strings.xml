@@ -27,7 +27,6 @@
     <string name="draw_other_app_permission_denied">Draw over other app permission not available. App won\'t work without permission. Please try again.</string>
     <string name="google_maps_key"></string>
 
-
     <string name="hello">
         <![CDATA[
         <html>
@@ -40,4 +39,7 @@
         </html>
         ]]>
     </string>
+
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
 </resources>

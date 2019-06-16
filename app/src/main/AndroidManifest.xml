@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.dotofocodex.android_sample">
 
     <!-- used by floating activity -->
-    <uses-permission
-        android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <!-- used by main activity -->
-    <uses-permission
-        android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <uses-permission android:name=
-        "android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- used by camera activity -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- enable/disable wifi -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:name=".App"
@@ -27,7 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/TransitionTheme"
         android:hardwareAccelerated="true"
-        android:largeHeap="false">
+        android:largeHeap="false"
+        >
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -151,6 +153,14 @@
 
         <activity
             android:name=".activity.MovableFloatingActionButtonActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DrawerLayoutActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MobileDataActivity"
             android:screenOrientation="portrait" />
 
         <!--  Declare FloatingWidget Service over here and set enabled true -->
