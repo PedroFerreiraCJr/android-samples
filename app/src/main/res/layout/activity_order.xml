@@ -29,9 +29,7 @@
             android:id="@+id/vp_order0"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
     </LinearLayout>
 
     <include layout="@layout/order_float_action_button" />
-
 </android.support.design.widget.CoordinatorLayout>

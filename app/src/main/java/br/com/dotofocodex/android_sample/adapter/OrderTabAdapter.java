@@ -107,8 +107,6 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         return f;
     }
 
-
-
     @SuppressLint("ValidFragment")
     public static final class OrderTab0Fragment extends Fragment {
 
@@ -390,7 +388,7 @@ public class OrderTabAdapter extends FragmentPagerAdapter {
         }
 
         private void setTouchListener(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,float dX, float dY,int actionState, boolean isCurrentlyActive) {
-            recyclerView.setOnTouchListener((v, event) -> {
+            recyclerView.setOnTouchListener((View v, MotionEvent event) -> {
                 swipeBack = event.getAction() == MotionEvent.ACTION_CANCEL || event.getAction() == MotionEvent.ACTION_UP;
                 return false;
             });
