@@ -12,13 +12,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import br.com.dotofocodex.android_sample.R;
+import br.com.dotofocodex.android_sample.adapter.BottomSheetTabAdapter;
 import br.com.dotofocodex.android_sample.adapter.OrderTabAdapter;
+import br.com.dotofocodex.android_sample.adapter.TabAdapter;
 import br.com.dotofocodex.android_sample.util.DisplayMetricsUtil;
 
+/**
+ * Expandable RecyclerView Basic Impl:
+ *  https://android.jlelse.eu/get-expandable-recyclerview-in-a-simple-way-8946046b4573
+ * Expandable RecyclerView Libs:
+ *  https://github.com/thoughtbot/expandable-recycler-view
+ * */
 public class OrderActivity extends AppCompatActivity {
 
     private static final String TAG = "OrderActivity";
@@ -65,10 +71,16 @@ public class OrderActivity extends AppCompatActivity {
     public static class BottomSheetFragment extends BottomSheetDialogFragment {
 
         private View bottomSheet;
-        private int bottomSheetPeekHeight;
+        private int peekHeight;
 
         public BottomSheetFragment() {
             super();
+        }
+
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            this.peekHeight = getResources().getDimensionPixelSize(R.dimen.bottom_sheet_default_peek_height);
         }
 
         @Override
@@ -82,13 +94,11 @@ public class OrderActivity extends AppCompatActivity {
             View view = inflater.inflate(R.layout.activity_order_bottom_sheet_main_dialog, container, false);
 
             bottomSheet = view.findViewById(R.id.ll_activity_order_bottom_sheet_dialog);
-            bottomSheetPeekHeight = getResources().getDimensionPixelSize(R.dimen.bottom_sheet_default_peek_height);
 
-            Button done = view.findViewById(R.id.bt_activity_order_bottom_sheet_item_0);
-            done.setOnClickListener((View v) -> {
-                dismiss();
-                Toast.makeText(getContext(), "Concluindo pedido...", Toast.LENGTH_SHORT).show();
-            });
+            ViewPager vp = view.findViewById(R.id.vp_activity_order);
+            TabLayout tl = view.findViewById(R.id.tl_activity_order);
+            vp.setAdapter(new BottomSheetTabAdapter(getChildFragmentManager()));
+            tl.setupWithViewPager(vp);
 
             return view;
         }
@@ -101,11 +111,11 @@ public class OrderActivity extends AppCompatActivity {
 
         private void setupBottomSheet() {
             BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from((View) getView().getParent());
-            bottomSheetBehavior.setPeekHeight(bottomSheetPeekHeight);
+            bottomSheetBehavior.setPeekHeight(this.peekHeight);
             bottomSheetBehavior.setHideable(true);
-            ViewGroup.LayoutParams childLayoutParams = bottomSheet.getLayoutParams();
+            ViewGroup.LayoutParams childLayoutParams = this.bottomSheet.getLayoutParams();
             childLayoutParams.height = (int) DisplayMetricsUtil.screenHeightInPixels();
-            bottomSheet.setLayoutParams(childLayoutParams);
+            this.bottomSheet.setLayoutParams(childLayoutParams);
         }
 
         public static final BottomSheetFragment newInstance() {
