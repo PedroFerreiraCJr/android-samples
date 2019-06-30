@@ -9,10 +9,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import br.com.dotofocodex.android_sample.R;
 
+
+/**
+ * RecyclerView inner NestedScrollView:
+ *  https://stackoverflow.com/questions/31000081/how-to-use-recyclerview-inside-nestedscrollview
+ * Very good tutorial of DrawerLayout:
+ *  https://guides.codepath.com/android/fragment-navigation-drawer
+ *  https://www.androidpro.com.br/blog/design-layout/material-design-criando-navigation-drawer
+ *  http://www.androiddeft.com/navigation-drawer-android-fragments
+ *  https://www.journaldev.com/9958/android-navigation-drawer-example-tutorial
+ * Tutorials about Android:
+ *  https://guides.codepath.com/android
+ * */
 public class DrawerLayoutActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
@@ -36,6 +51,12 @@ public class DrawerLayoutActivity extends AppCompatActivity implements Navigatio
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        Switch sw = navigationView.getMenu().findItem(R.id.nav_item_one).getActionView().findViewById(R.id.sw_activity_drawer_layout);
+        sw.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
+            if (isChecked) {
+                Toast.makeText(DrawerLayoutActivity.this, "Turn the lights ON!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
