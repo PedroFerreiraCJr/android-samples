@@ -163,6 +163,10 @@
             android:name=".activity.MobileDataActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity.ExpandableActivity"
+            android:screenOrientation="portrait" />
+
         <!--  Declare FloatingWidget Service over here and set enabled true -->
         <service
             android:name=".service.android.FloatingWidgetService"

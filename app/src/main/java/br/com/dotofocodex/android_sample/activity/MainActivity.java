@@ -222,6 +222,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MobileDataActivity.class));
                 return true;
             }
+            case R.id.exp_act: {
+                startActivity(new Intent(MainActivity.this, ExpandableActivity.class));
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

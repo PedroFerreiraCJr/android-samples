@@ -117,4 +117,8 @@
     <item
         android:id="@+id/mobile_data_act"
         android:title="Mobile Data Activity" />
+
+    <item
+        android:id="@+id/exp_act"
+        android:title="Expandable Activity" />
 </menu>
